@@ -1,7 +1,7 @@
 FROM python:alpine as base
-RUN pip install --no-cache-dir \
-    falcon \
-    hachoir3
+
+COPY mediaInfoService.pip /
+RUN pip install --no-cache-dir -r /mediaInfoService.pip
 
 COPY mediaInfoService.py /
 
