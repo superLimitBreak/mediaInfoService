@@ -9,7 +9,7 @@ COPY mediaInfoService.py /
 ARG PORT=8331
 ENV PORT=${PORT}
 EXPOSE ${PORT}
-ENTRYPOINT ['python3', 'mediaInfoService.py']
+ENTRYPOINT ["python3", "mediaInfoService.py"]
 #ENTRYPOINT python3 mediaInfoService.py --port ${PORT}
 # : this shell form entrypoint may prevent sigterm shutdown of the container - investigate
 
