@@ -15,8 +15,6 @@ ENTRYPOINT ["python3", "mediaInfoService.py"]
 
 
 FROM base as test
-RUN pip install --no-cache-dir \
-    pytest
 COPY mediaInfoService_test.py mediaInfoService_test.png /
 RUN pytest --doctest-modules mediaInfoService_test.py
 
