@@ -1,1 +1,4 @@
-_env
+_env/
+**/*.py[cod]
+**/__pycache__
+**/.cache
