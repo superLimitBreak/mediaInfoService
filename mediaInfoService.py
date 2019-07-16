@@ -45,7 +45,7 @@ class MediaInfo():
             return
         if not os.path.isfile(filename):
             response.media = {'error': 'file not found'}
-            response.status = falcon.HTTP_400
+            response.status = falcon.HTTP_404
             return
         try:
             metadata = hachoir_metadata_dict(os.path.join(self.path, filename))
