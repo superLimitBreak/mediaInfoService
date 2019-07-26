@@ -42,6 +42,10 @@ $(ENV):
 run: $(ENV)
 	${PYTHON} mediaInfoService.py ./
 
+.PHONY: cloc
+cloc:
+	cloc --vcs=git
+
 .PHONY: clean
 clean:
 	rm -rf ${ENV}
