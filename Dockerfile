@@ -1,7 +1,7 @@
 FROM python:alpine as base
 WORKDIR /mediaInfoService
-COPY mediaInfoService.run.pip .
-RUN pip install --no-cache-dir -r mediaInfoService.run.pip
+COPY requirements.run.txt .
+RUN pip install --no-cache-dir -r requirements.run.txt
 
 
 FROM base as production
@@ -15,8 +15,8 @@ ENTRYPOINT ["python3", "mediaInfoService.py"]
 
 
 FROM base as base_test
-COPY mediaInfoService.test.pip .
-RUN pip install --no-cache-dir -r mediaInfoService.test.pip
+COPY requirements.test.txt .
+RUN pip install --no-cache-dir -r requirements.test.txt
 
 FROM base_test as test
 COPY --from=production /mediaInfoService/* ./

@@ -36,7 +36,7 @@ $(ENV):
 	#python$(PYTHON_VERSION) -m virtualenv $(ENV)
 	virtualenv -p python$(PYTHON_VERSION) $(ENV)
 	$(PIP) install --upgrade pip
-	$(PIP) install -r mediaInfoService.pip
+	$(PIP) install -r requirements.run.pip
 
 .PHONY: run
 run: $(ENV)
